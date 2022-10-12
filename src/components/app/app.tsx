@@ -1,5 +1,9 @@
+import Array from '../array/array';
+
 function App(): JSX.Element {
-  return <p>Hello, world!</p>;
+  return (
+    <Array />
+  );
 }
 
 export default App;
