@@ -1,8 +1,8 @@
 import './bar.scss';
 
 type BarProps = {
-  width: string;
-  height: string;
+  width: number;
+  height: number;
 }
 
 function Bar ({width, height}: BarProps) : JSX.Element {
