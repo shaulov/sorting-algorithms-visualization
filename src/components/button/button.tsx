@@ -3,13 +3,13 @@ import './button.scss';
 
 type ButtonProps = {
   text: string;
-  className: string;
+  className?: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
 function Button ({ text, className, onClick }: ButtonProps) {
   return (
-    <button className={`button ${className}}`} onClick={onClick}>{text}</button>
+    <button className={`button ${className ? className : ''}}`} onClick={onClick}>{text}</button>
   );
 }
 
