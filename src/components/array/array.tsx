@@ -1,9 +1,10 @@
 import Bar from '../bar/bar';
 import { createArray } from '../../utils/createArray';
+import { DEFAULT_ARRAY_LENGTH } from '../../const';
 import './array.scss';
 
 const WIDTH_MULTIPLIER = window.screen.width;
-const ARRAY = createArray(30);
+const ARRAY = createArray(DEFAULT_ARRAY_LENGTH);
 const BAR_WIDTH = WIDTH_MULTIPLIER / ARRAY.length;
 
 function Array (): JSX.Element {
