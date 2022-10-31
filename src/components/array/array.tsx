@@ -22,7 +22,7 @@ function Array (): JSX.Element {
     <div className="array">
       {
         array.map((height) => {
-          const barId = randomNumberFromInterval(0, array.length) * height;
+          const barId = randomNumberFromInterval(1, array.length) * height;
           return (<Bar key={barId} width={BAR_WIDTH} height={height} />);
         })
       }
