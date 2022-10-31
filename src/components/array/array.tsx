@@ -1,18 +1,30 @@
+import { useEffect } from 'react';
+import { useAppSelector, useAppDispatch } from '../../hooks';
+import { resetArray } from '../../store/array-process/array-process';
+import { getArray } from '../../store/array-process/selectors';
 import Bar from '../bar/bar';
-import { createArray } from '../../utils/createArray';
+import { randomNumberFromInterval } from '../../utils/createArray';
 import './array.scss';
 
 const WIDTH_MULTIPLIER = window.screen.width;
-const ARRAY = createArray(30);
-const BAR_WIDTH = WIDTH_MULTIPLIER / ARRAY.length;
 
 function Array (): JSX.Element {
+  const array = useAppSelector(getArray);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(resetArray());
+  }, []);
+
+  const BAR_WIDTH = WIDTH_MULTIPLIER / array.length || 0;
+
   return (
     <div className="array">
       {
-        ARRAY.map((height) => (
-          <Bar key={height} width={BAR_WIDTH} height={height} />
-        ))
+        array.map((height) => {
+          const barId = randomNumberFromInterval(0, array.length) * height;
+          return (<Bar key={barId} width={BAR_WIDTH} height={height} />);
+        })
       }
     </div>
   );

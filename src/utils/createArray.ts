@@ -1,4 +1,4 @@
-const randomNumberFromInterval = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1) + min);
+export const randomNumberFromInterval = (min: number, max: number): number => Math.floor(Math.random() * (max - min + 1) + min);
 
 export const createArray = (arrayLength: number): number[] => {
   const array = [];
