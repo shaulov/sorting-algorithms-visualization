@@ -1,21 +1,13 @@
-import { useAppDispatch } from '../../hooks';
-import { resetArray } from '../../store/array-process/array-process';
-import Button from '../button/button';
+import ResetButton from '../reset-button/reset-button';
+
 import './controls.scss';
 
-function Controls () {
-  const dispatch = useAppDispatch();
-  const handleResetClick = () => {
-    dispatch(resetArray());
-  };
-
-  return (
-    <div className="controls">
-      <div className="controls__buttons">
-        <Button text="Пересоздать массив" onClick={handleResetClick}/>
-      </div>
+const Controls = () => (
+  <div className="controls">
+    <div className="controls__buttons">
+      <ResetButton />
     </div>
-  );
-}
+  </div>
+);
 
 export default Controls;
