@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { ComparisonProcess } from '../../types/state';
-import { START_SORTING_SPEED, NameSpace } from '../../const';
+import { NameSpace } from '../../const';
 
 const initialState: ComparisonProcess = {
   inProgress: false,
@@ -16,7 +16,7 @@ export const comparisonSlice = createSlice({
   initialState: initialState,
   reducers: {
     reset: (state) => {
-      state.sortingSpeed = START_SORTING_SPEED;
+      state = initialState;
     },
     toggleSort: (state, action: PayloadAction<boolean>) => {
       state.inProgress = action.payload;

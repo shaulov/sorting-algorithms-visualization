@@ -1,14 +1,12 @@
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { resetArray } from '../../store/sorting-actions';
-import { getArrayLength } from '../../store/array-process/selectors';
+import { useAppDispatch } from '../../hooks';
+import { resetArrayAction } from '../../store/sorting-actions';
 import Button from '../button/button';
 
 function Controls () {
   const dispatch = useAppDispatch();
-  const arrayLength = useAppSelector(getArrayLength);
 
   const handleResetClick = () => {
-    dispatch(resetArray(arrayLength));
+    dispatch(resetArrayAction());
   };
 
   return (

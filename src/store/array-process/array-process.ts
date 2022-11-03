@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { resetArray } from '../sorting-actions';
+import { resetArrayAction, setNewParamsAction } from '../sorting-actions';
 import { ArrayProcess } from '../../types/state';
 import { DEFAULT_ARRAY_LENGTH, NameSpace } from '../../const';
 
@@ -22,7 +22,10 @@ export const arraySlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(resetArray.fulfilled, (state, action: PayloadAction<number[]>) => {
+      .addCase(resetArrayAction.fulfilled, (state, action: PayloadAction<number[]>) => {
+        state.array = action.payload;
+      })
+      .addCase(setNewParamsAction.fulfilled, (state, action: PayloadAction<number[]>) => {
         state.array = action.payload;
       });
   },

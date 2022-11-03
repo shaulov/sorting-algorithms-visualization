@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../hooks';
-import { resetArray } from '../../store/sorting-actions';
-import { getArray, getArrayLength } from '../../store/array-process/selectors';
+import { resetArrayAction } from '../../store/sorting-actions';
+import { getArray } from '../../store/array-process/selectors';
 import Bar from '../bar/bar';
 import { randomNumberFromInterval } from '../../utils/createArray';
 import './array.scss';
@@ -10,11 +10,10 @@ const WIDTH_MULTIPLIER = window.screen.width;
 
 function Array (): JSX.Element {
   const array = useAppSelector(getArray);
-  const arrayLength = useAppSelector(getArrayLength);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(resetArray(arrayLength));
+    dispatch(resetArrayAction());
   }, []);
 
   const BAR_WIDTH = WIDTH_MULTIPLIER / array.length || 0;
