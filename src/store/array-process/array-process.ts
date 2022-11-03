@@ -1,13 +1,8 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { resetArray } from '../sorting-actions';
 import { ArrayProcess } from '../../types/state';
 import { DEFAULT_ARRAY_LENGTH, NameSpace } from '../../const';
-import { createArray } from '../../utils/createArray';
-
-export const resetArray = createAsyncThunk<number[], undefined>(
-  'ARRAY/RESET_ARRAY',
-  (_arg, thunkAPI) => createArray(DEFAULT_ARRAY_LENGTH),
-);
 
 const initialState: ArrayProcess = {
   array: [],
