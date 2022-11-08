@@ -15,5 +15,3 @@ export const setActiveElements = createAction<number[]>('COMPARISON/SET_ACTIVE_E
 export const setAdditionalElements = createAction<number[]>('COMPARISON/SET_ADDITIONAL_ELEMENTS');
 
 export const setSortedElements = createAction<number[]>('COMPARISON/SET_SORTED_ELEMENTS');
-
-export const bubbleSort = createAction('SORTING/BUBBLE_SORT');

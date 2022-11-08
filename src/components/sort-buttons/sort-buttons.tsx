@@ -1,12 +1,12 @@
 import { useAppDispatch } from '../../hooks';
-import { bubbleSort } from '../../store/action';
+import { bubbleSortAction } from '../../store/sorting-actions';
 import Button from '../button/button';
 import './sort-buttons.scss';
 
 function SortButtons () {
   const dispatch = useAppDispatch();
   const onBubbleSort = () => {
-    dispatch(bubbleSort());
+    dispatch(bubbleSortAction());
   };
 
   return (
