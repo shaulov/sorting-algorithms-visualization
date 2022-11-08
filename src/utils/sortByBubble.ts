@@ -1,4 +1,4 @@
-export const bubbleSort = (arr: number[]) => {
+export const sortByBubble = (arr: number[]): number[]=> {
   for (let i = 0, endI = arr.length - 1; i < endI; i++) {
     let wasSwap = false;
     for (let j = 0, endJ = endI - i; j < endJ; j++) {
