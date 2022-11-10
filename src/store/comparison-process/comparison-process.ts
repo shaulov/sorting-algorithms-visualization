@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { bubbleSortAction } from '../sorting-actions';
 import { ComparisonProcess } from '../../types/state';
 import { NameSpace } from '../../const';
 
@@ -35,12 +34,6 @@ export const comparisonSlice = createSlice({
       state.sortedElements = action.payload;
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(bubbleSortAction.fulfilled, (state, action: PayloadAction<number[]>) => {
-        state.sortedElements = action.payload;
-      });
-  }
 });
 
 export const { reset, toggleSort, setSortingSpeed, setActiveElements, setAdditionalElements, setSortedElements } = comparisonSlice.actions;
