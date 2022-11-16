@@ -11,11 +11,16 @@ bubbleSortListener.startListening({
   effect: (action, listenerApi) => {
     const array = [...action.payload];
 
-    const completedElements: number[] = [];
+    // for(let step = 0; step < array.length - 1; step++) {
+    //   for(let compareIndex = 0; compareIndex < array.length - 1 - step; compareIndex++) {
 
+    //   }
+    // }
+
+    // console.log(array);
+
+    // listenerApi.dispatch(setNewParams());
     listenerApi.dispatch(setSortedElements(sortByBubble(array)));
-
-    console.log(sortByBubble(array));
   }
 });
 
