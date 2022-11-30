@@ -1,11 +1,12 @@
 import { useAppDispatch } from '../../hooks';
-import { resetArray } from '../../store/array-process/array-process';
+import { resetArrayAction } from '../../store/sorting-actions';
 import Button from '../button/button';
 
 function Controls () {
   const dispatch = useAppDispatch();
+
   const handleResetClick = () => {
-    dispatch(resetArray());
+    dispatch(resetArrayAction());
   };
 
   return (

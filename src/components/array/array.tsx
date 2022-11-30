@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../hooks';
-import { resetArray } from '../../store/array-process/array-process';
+import { resetArrayAction } from '../../store/sorting-actions';
 import { getArray } from '../../store/array-process/selectors';
 import Bar from '../bar/bar';
 import { randomNumberFromInterval } from '../../utils/createArray';
@@ -13,7 +13,7 @@ function Array (): JSX.Element {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(resetArray());
+    dispatch(resetArrayAction());
   }, []);
 
   const BAR_WIDTH = WIDTH_MULTIPLIER / array.length || 0;

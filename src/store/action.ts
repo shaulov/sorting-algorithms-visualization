@@ -1,5 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 
-export const setArray = createAction<number[], 'ARRAY/SET_ARRAY'>('ARRAY/SET_ARRAY');
+interface IParams {
+  [identifire: number]: number;
+}
 
-export const setLength = createAction<number, 'ARRAY/SET_LENGTH'>('ARRAY/SET_LENGTH');
+export const setNewParams = createAction<IParams>('SORTING/SET_NEW_PARAMS');
+
+export const bubbleSort = createAction<number[]>('SORTING/BUBBLE');
